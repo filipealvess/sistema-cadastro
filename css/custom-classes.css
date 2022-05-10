@@ -1,3 +1,58 @@
 .text-small {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
+  line-height: 120%;
+}
+
+.step {
+  position: relative;
+  color: #707070;
+  width: calc(100% / 3);
+}
+
+.step:before,
+.step:after {
+  content: '';
+  position: absolute;
+  background-color: #707070;
+}
+
+.step:before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -20px;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.step:after {
+  top: -14px;
+  left: -50%;
+  width: 100%;
+  height: 3px;
+}
+
+.step:first-child:after {
+  display: none;
+}
+
+.step.active:before,
+.step.active:after,
+.step.completed::before,
+.step.completed::after {
+  background-color: #C83D2F;
+}
+
+.step.active {
+  color: #C83D2F;
+  font-weight: 700;
+}
+
+.step.completed {
+  color: #bfbfbf;
+  font-weight: 400;
 }
