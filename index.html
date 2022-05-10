@@ -76,7 +76,13 @@
         <div class="row mb-3">
           <label class="p-0 text-secondary" for="domain">
             Domínio
-            <i class="bi bi-question-circle-fill"></i>
+            <i
+              class="bi bi-question-circle-fill"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-html="true"
+              title="Como o seu portal será acessado na web <br/> (ex.: <em>portal.selbetti.com.br</em>)"
+            ></i>
           </label>
           <div class="input-group p-0">
             <input type="text" class="form-control" id="domain">
@@ -117,5 +123,11 @@
   </div>
 
   <script src="/js/bootstrap.bundle.min.js"></script>
+  <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+  </script>
 </body>
 </html>
