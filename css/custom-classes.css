@@ -62,8 +62,12 @@
   transition: 0.3s border-color;
 }
 
-.card-hover:hover {
+.card-hover:not(.active-card):hover {
   border-color: #707070;
+}
+
+.active-card {
+  border-color: #C83D2F;
 }
 
 .big-spinner {
