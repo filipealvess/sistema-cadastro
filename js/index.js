@@ -69,5 +69,5 @@ function handleFormSubmit(event) {
     receiveNews
   });
 
-  window.location.replace('/etapa-2.html');
+  window.location.replace('./etapa-2.html');
 }

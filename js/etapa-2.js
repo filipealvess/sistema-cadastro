@@ -29,7 +29,7 @@ function handleFormSubmit(event) {
 
   anotherSegment && segments.push(anotherSegment);
   saveData('segments', segments);
-  window.location.replace('/etapa-3.html');
+  window.location.replace('./etapa-3.html');
 }
 
 cards.forEach(card => {
