@@ -40,7 +40,7 @@
     </div>
 
     <main class="row justify-content-center m-0">
-      <form class="col-10 col-md-7 col-lg-5 p-4 p-sm-5 bg-light d-flex flex-column shadow">
+      <form class="col-10 col-md-7 col-lg-5 p-4 p-sm-5 bg-light d-flex flex-column shadow" onsubmit="handleFormSubmit(event)">
         <article class="row mb-4">
           <ul class="w-100 d-flex list-unstyled p-0 m-0">
             <li class="text-center flex-grow-1 text-small step active">
@@ -97,13 +97,13 @@
           <label class="p-0 text-secondary" for="phone-country">Telefone</label>
           <div class="col-fluid d-flex p-0 m-0">
             <div class="w-25 me-1 me-sm-2">
-              <input type="tel" class="form-control" id="phone-country" required>
+              <input type="tel" class="form-control" id="phone-country" required oninput="handlePhoneCountryChange(event)">
             </div>
             <div class="w-25 me-1 me-sm-2">
-              <input type="tel" class="form-control" id="phone-ddd" required>
+              <input type="tel" class="form-control" id="phone-ddd" required  oninput="handlePhoneDDDChange(event)">
             </div>
             <div class="w-50">
-              <input type="tel" class="form-control" id="phone-number" required>
+              <input type="tel" class="form-control" id="phone-number" required  oninput="handlePhoneNumberChange(event)">
             </div>
           </div>
         </div>
@@ -123,11 +123,18 @@
   </div>
 
   <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/index.js"></script>
   <script>
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
+    const tooltip = document.querySelector('[data-bs-toggle="tooltip"]');
+    const phoneCountry = document.querySelector('.phone-country');
+    const phoneDDD = document.querySelector('.phone-ddd');
+    const phoneNumber = document.querySelector('.phone-number');
+
+    new bootstrap.Tooltip(tooltip);
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+    }
   </script>
 </body>
 </html>
